@@ -147,7 +147,7 @@ function disease(d){
 <div class="block" id="check"><h2>이런 증상이 있나요? <small style="font-size:14px;color:var(--mute);font-weight:500">| 1분 체크</small></h2><ul class="checks">${d.checks.map(c=>`<li>${esc(c)}</li>`).join('')}</ul><p class="note" style="margin-top:8px">위 체크리스트는 자가진단이 아니라 진료 상담을 돕기 위한 참고 문항입니다.</p></div>
 <div class="block"><h2>어떤 질환인가요? 주요 증상</h2><p>${esc(d.what)}</p></div>
 <div class="block"><h2>원인과 악화 요인</h2><p>${esc(d.cause)}</p></div>
-<div class="block" id="exam"><h2>검사와 감별이 필요한 경우</h2><p>${esc(d.exam)}</p>${d.warn?`<div class="warn"><b>응급·전문 진료 신호</b> · ${esc(d.warn)}</div>`:''}
+<div class="block" id="exam"><h2>검사와 감별이 필요한 경우</h2><p>${esc(d.exam)}</p>
 <figure class="photo" style="margin-top:18px"><img loading="lazy" src="${p}img/${ex[0]}.jpg" alt="${ex[1]} 사진" style="aspect-ratio:16/8;object-position:center 40%"><figcaption>원내 ${ex[1]} · 실제 시행 항목은 환자 상태에 따라 선택됩니다.</figcaption></figure></div>
 <div class="block"><h2>강남뇌편한의원의 진료 및 치료 방향</h2>${viewsBadge()}<p>${esc(d.care)}</p>
 <figure class="photo" style="margin-top:18px"><img loading="lazy" src="${p}img/KSK03970.jpg" alt="박종민 원장이 환자와 상담하는 모습" style="aspect-ratio:16/8;object-position:center 30%"></figure></div>
@@ -173,7 +173,7 @@ function hub(c){
 <section class="sec"><div class="wrap"><h2>내 증상 확인</h2><ul class="checks" style="margin-top:14px">${H.checks.map(x=>`<li>${esc(x)}</li>`).join('')}</ul></div></section>
 <section class="sec" id="list"><div class="wrap"><h2>어떤 질환인지 선택해 보세요</h2><p class="sub-lead">증상 양상에 맞는 안내를 선택하면 원인·감별·진료 방향을 자세히 볼 수 있습니다.</p>
 <div class="grid g3">${ds.map(d=>{const [im,k]=ILL[d.slug];return `<a class="icard" href="${p+fileOf(d)}"><div class="im ${k==='dia'?'dia':''}"><img loading="lazy" src="${p}img/ill/${im}.jpg" alt="${esc(d.name)}"></div><div class="bd"><h3>${esc(d.name)}</h3><p>${esc(d.intro.length>78?d.intro.slice(0,78)+'…':d.intro)}</p><span class="more">자세히 보기 →</span></div></a>`}).join('')}</div></div></section>
-<section class="sec alt"><div class="wrap split"><div><h2>원인과 감별</h2><p>${esc(H.cause)}</p>${H.warn?`<div class="warn"><b>응급·전문 진료 신호</b> · ${esc(H.warn)}</div>`:''}<h3 style="margin-top:24px">강남뇌편한의원의 진료 방향</h3><p>${esc(H.care)}</p></div>
+<section class="sec alt"><div class="wrap split"><div><h2>원인과 감별</h2><p>${esc(H.cause)}</p><h3 style="margin-top:24px">강남뇌편한의원의 진료 방향</h3><p>${esc(H.care)}</p></div>
 <figure class="photo" style="box-shadow:var(--sh)"><img loading="lazy" src="${p}img/KSK03962.jpg" alt="박종민 원장과 환자의 진료 상담 장면"></figure></div></section>
 <section class="sec"><div class="wrap"><h2>${CATS[c].name} 치료 후기</h2><p class="sub-lead">환자분이 직접 남긴 후기입니다.</p>${reviews(c,depth,4)}</div></section>
 ${ctaBand()}</main>`+footer(depth)+'</body></html>';
