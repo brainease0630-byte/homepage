@@ -175,7 +175,7 @@ function hub(c){
 <div class="grid g3">${ds.map(d=>{const [im,k]=ILL[d.slug];return `<a class="icard" href="${p+fileOf(d)}"><div class="im ${k==='dia'?'dia':''}"><img loading="lazy" src="${p}img/ill/${im}.jpg" alt="${esc(d.name)}"></div><div class="bd"><h3>${esc(d.name)}</h3><p>${esc(d.intro.length>78?d.intro.slice(0,78)+'…':d.intro)}</p><span class="more">자세히 보기 →</span></div></a>`}).join('')}</div></div></section>
 <section class="sec alt"><div class="wrap split"><div><h2>원인과 감별</h2><p>${esc(H.cause)}</p><h3 style="margin-top:24px">강남뇌편한의원의 진료 방향</h3><p>${esc(H.care)}</p></div>
 <figure class="photo" style="box-shadow:var(--sh)"><img loading="lazy" src="${p}img/KSK03962.jpg" alt="박종민 원장과 환자의 진료 상담 장면"></figure></div></section>
-<section class="sec"><div class="wrap"><h2>${CATS[c].name} 치료 후기</h2><p class="sub-lead">환자분이 직접 남긴 후기입니다.</p>${reviews(c,depth,4)}</div></section>
+<section class="sec"><div class="wrap"><h2>${CATS[c].name} 치료 후기</h2><p class="sub-lead">환자분들께서 직접 남겨주신 후기들입니다.</p>${reviews(c,depth,4)}</div></section>
 ${ctaBand()}</main>`+footer(depth)+'</body></html>';
  write(hubFile(c),html);
 }
@@ -225,8 +225,9 @@ ${viewsBadge()}
 <section class="sec" id="space"><div class="wrap"><h2>진료실과 대기 공간</h2><p class="sub-lead">편안한 분위기에서 충분히 상담하실 수 있도록 마련했습니다.</p>
 <div class="gal space"><figure class="photo"><img loading="lazy" src="img/KSK03962.jpg" alt="진료실에서 환자와 상담하는 박종민 원장"></figure><figure class="photo"><img loading="lazy" src="img/k4215.jpg" alt="접수 데스크"></figure><figure class="photo"><img loading="lazy" src="img/k4227.jpg" alt="대기 공간"></figure><figure class="photo"><img loading="lazy" src="img/KSK03970.jpg" alt="진료 상담 장면"></figure><figure class="photo"><img loading="lazy" src="img/k4251.jpg" alt="대기 라운지"></figure></div></div></section>
 
-<section class="sec alt" id="reviews"><div class="wrap"><h2>환자 치료 후기</h2><p class="sub-lead">환자분이 직접 남긴 후기입니다. 치료 결과와 경과는 개인마다 다를 수 있으며 모든 분께 같은 효과를 보장하지 않습니다.</p>
-<div class="rv">${['head1','head2','diz1','diz2','ans2','ans3','fog1','fog3','mci2','head4','diz4','ans4'].map(k=>`<figure class="photo"><img loading="lazy" src="img/review/${k}.jpg" alt="진료 환자 후기 화면 캡처"></figure>`).join('')}</div></div></section>
+<section class="sec alt" id="reviews"><div class="wrap"><h2>환자 치료 후기</h2><p class="sub-lead">환자분들께서 직접 남겨주신 후기들입니다.</p>
+<div class="rv">${['head1','head2','diz1','diz2','ans2','ans3','fog1','fog3','mci2','head4','diz4','ans4'].map(k=>`<figure class="photo"><img loading="lazy" src="img/review/${k}.jpg" alt="진료 환자 후기 화면 캡처"></figure>`).join('')}</div>
+<p class="note" style="margin-top:10px">치료 결과와 경과는 개인마다 다를 수 있으며 모든 분께 같은 효과를 보장하지 않습니다.</p></div></section>
 
 <section class="sec"><div class="wrap"><h2>환자가 자주 묻는 질문</h2><div class="faq" style="margin-top:18px">${faq.map(([q,a])=>`<details><summary>${esc(q)}</summary><p>${esc(a)}</p></details>`).join('')}</div></div></section>
 
