@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://gangnambrain.co.kr/sitemap.xml
+Sitemap: https://gangnambrain.com/sitemap.xml

@@ -1,6 +1,6 @@
 const fs=require('fs'),path=require('path');
 const ROOT=path.join(__dirname,'..');
-const SITE='https://gangnambrain.co.kr';
+const SITE='https://gangnambrain.com';
 const TEL='02-566-5421', TELHREF='tel:025665421';
 const NAVER='https://booking.naver.com/booking/13/bizes/1450016', KAKAO='https://pf.kakao.com/_byNxin', YT='https://www.youtube.com/@gangnambrain', BLOG='https://blog.naver.com/minkmd';
 const ADDR='서울 강남구 테헤란로51길 7, 수지빌딩 3층';
