@@ -1,6 +1,13 @@
 document.addEventListener('DOMContentLoaded',function(){
   var b=document.querySelector('.burger'),n=document.querySelector('nav.gnb');
   if(b&&n)b.addEventListener('click',function(){n.classList.toggle('open');b.setAttribute('aria-expanded',n.classList.contains('open'))});
+  // mobile bottom bar: call + Naver booking
+  var fab=document.querySelector('.fab');
+  if(fab&&!document.querySelector('.mbar')){
+    var bar=document.createElement('div');bar.className='mbar';
+    var tel=document.createElement('a');tel.className='btn line';tel.href='tel:025665421';tel.textContent='☎ 전화 문의';
+    bar.appendChild(tel);fab.parentNode.insertBefore(bar,fab);bar.appendChild(fab);
+  }
   // symptom picker (main page)
   var box=document.getElementById('symList'),res=document.getElementById('symResult');
   if(box&&res){

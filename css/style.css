@@ -239,3 +239,46 @@ a:has(>.bi){display:inline-flex;align-items:center;gap:8px}
 .btn .bi{background:#fff}
 footer.site a:has(>.bi){gap:6px}
 footer.site .bi{width:18px;height:18px}
+
+/* ===== mobile optimization ===== */
+html{-webkit-tap-highlight-color:rgba(15,88,160,.12)}
+.mbar{display:none}
+@media(max-width:960px){
+ body{padding-bottom:calc(72px + env(safe-area-inset-bottom))}
+ .hd{height:62px}.hd .logo img{height:40px}
+ nav.gnb{top:62px;max-height:calc(100vh - 62px - 72px)}
+ nav.gnb>ul>li>a{padding:13px 4px}
+ nav.gnb .sub a{padding:11px 12px}
+ .burger{min-width:48px;min-height:48px}
+ .mbar{display:flex;gap:8px;position:fixed;left:0;right:0;bottom:0;z-index:40;padding:8px 12px calc(8px + env(safe-area-inset-bottom));background:rgba(255,255,255,.97);border-top:1px solid var(--line);box-shadow:0 -6px 18px rgba(11,42,75,.10)}
+ .mbar .btn{flex:1;position:static;box-shadow:none;padding:13px 8px;font-size:16px;white-space:nowrap}
+ .mbar .btn:hover{transform:none;box-shadow:none}
+ .mbar .fab{display:inline-flex;flex:1.4}
+ footer.site li a{display:inline-block;padding:6px 0}
+}
+@media(max-width:600px){
+ .wrap{padding:0 18px}
+ section.sec{padding:44px 0}
+ .hero .wrap{padding-top:32px}
+ .hero h1{font-size:clamp(25px,7vw,30px)}
+ .hero p.lead{font-size:16.5px;margin-bottom:20px}
+ .cta .btn{flex:1 1 100%}
+ .btn.lg{padding:15px 24px}
+ .heroshot{min-height:260px}
+ /* compact horizontal condition cards */
+ .icard{flex-direction:row;align-items:stretch;min-height:118px}
+ .icard .im{flex:0 0 34%;aspect-ratio:auto;min-height:118px}
+ .icard .bd{padding:14px 14px 12px}
+ .icard h3{font-size:19px}
+ .icard p{font-size:14.5px;line-height:1.55}
+ .icard .pills{display:none}
+ .grid{gap:12px}
+ .greet{padding:20px 18px;font-size:17px}
+ .hours li{flex-wrap:wrap;gap:2px 14px;padding:12px 14px}
+ .sym input{width:32px;height:32px}
+ .sym span.t{padding:10px 10px 12px;font-size:14.5px}
+ .pill{padding:10px 16px}
+ .card{padding:20px}
+ table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch}
+}
+@media(hover:none){a.card:hover,a.icard:hover,.btn:hover{transform:none}.icard:hover .im img{transform:none}}
