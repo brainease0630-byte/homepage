@@ -1,0 +1,5 @@
+.impeccable/
+.claude/skills/
+skills-lock.json
+node_modules/
+*.log
